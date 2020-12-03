@@ -6,7 +6,7 @@ import BurgerStack from './components/BurgerStack'
 import "./css/App.css";
 
 const App = () => {
-  const [ingredients, setIngredients] = useState(
+  const [ingredients] = useState(
     [
       { name: "Kaiser Bun", color: "saddlebrown", id: 1 },
       { name: "Sesame Bun", color: "sandybrown", id: 2 },
@@ -24,8 +24,8 @@ const App = () => {
 
 const [selectedIngredients, setSelectedIngredients] = useState([])
 
-const addIngredient = name => {
-  setSelectedIngredients([...selectedIngredients,name])
+const addIngredient = (name, id) => {
+  setSelectedIngredients([...selectedIngredients,{name, id}])
 }
 
 const clearBurger = () => {
