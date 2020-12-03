@@ -28,6 +28,10 @@ const addIngredient = name => {
   setSelectedIngredients([...selectedIngredients,name])
 }
 
+const clearBurger = () => {
+  setSelectedIngredients([])
+}
+
   return (
 
     <div className="App">
@@ -41,6 +45,7 @@ const addIngredient = name => {
           ))}
           <BurgerStack 
             selectedIngredients = {selectedIngredients}
+            clearBurger = {clearBurger}
           />
     </div>
   );
