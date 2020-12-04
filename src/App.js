@@ -24,8 +24,8 @@ const App = () => {
 
 const [selectedIngredients, setSelectedIngredients] = useState([])
 
-const addIngredient = (name, id) => {
-  setSelectedIngredients([...selectedIngredients,{name, id}])
+const addIngredient = (name, id, color) => {
+  setSelectedIngredients([...selectedIngredients,{name, id, color}])
 }
 
 const clearBurger = () => {
@@ -34,19 +34,25 @@ const clearBurger = () => {
 
   return (
 
-    <div className="App">
+    <div className="App container">
+        <div className="side">
           <h2>Ingredients</h2>
           {ingredients.map(ingredient => (
           <Ingredient 
             key={ingredient.id}
             name={ingredient.name}
-            addIngredient={() => addIngredient(ingredient.name)}
+            color={ingredient.color}
+            addIngredient={() => addIngredient(ingredient.name, ingredient.id, ingredient.color)}
           />
           ))}
+        </div>
+        <div className="side">
+          <h2>Burger Stack!</h2>
           <BurgerStack 
             selectedIngredients = {selectedIngredients}
             clearBurger = {clearBurger}
           />
+        </div>
     </div>
   );
 };
