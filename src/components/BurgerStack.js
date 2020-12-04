@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const BurgerStack = ({selectedIngredients, clearBurger}) => {
     return(
         <div className="side">

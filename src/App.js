@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import shortid from "shortid";
 // Components imports
 import Ingredient from "./components/Ingredient";
 import BurgerStack from './components/BurgerStack'
@@ -25,7 +26,11 @@ const App = () => {
 const [selectedIngredients, setSelectedIngredients] = useState([])
 
 const addIngredient = (name, id, color) => {
-  setSelectedIngredients([...selectedIngredients,{name, id, color}])
+  setSelectedIngredients([...selectedIngredients,{
+    name,
+    id: shortid.generate(), 
+    color, 
+    }])
 }
 
 const clearBurger = () => {
